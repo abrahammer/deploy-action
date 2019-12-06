@@ -1,13 +1,13 @@
 name: 'Wait'
 description: 'Wait a designated number of milliseconds'
 inputs:
-  milliseconds:  # id of input
-    description: 'number of milliseconds to wait'
+  environment:  # id of input
+    description: 'environment to deploy'
     required: true
-    default: '1000'
+    default: 'development'
 outputs:
-  time: # output will be available to future steps 
-    description: 'The message to output'
+  status: # output will be available to future steps 
+    description: 'deploy status'
 runs:
   using: 'node12'
   main: 'dist/index.js'
