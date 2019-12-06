@@ -60,17 +60,12 @@ const wait = __webpack_require__(949);
 // most @actions toolkit packages have async methods
 async function run() {
   try { 
-    const ms = core.getInput('milliseconds');
-    console.log(`Waiting ${ms} milliseconds ...`)
-
-    core.debug((new Date()).toTimeString())
-    wait(parseInt(ms));
-    core.debug((new Date()).toTimeString())
-
-    core.setOutput('time', new Date().toTimeString());
+    const env = core.getInput('environment');
+    console.log(`Deploying to ${env}`)
+    core.setOutput('status', 'Success');
   } 
   catch (error) {
-    core.setFailed(error.message);
+    core.setOutput('status', 'Failed');
   }
 }
 
