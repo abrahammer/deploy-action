@@ -1,5 +1,5 @@
-name: 'Wait'
-description: 'Wait a designated number of milliseconds'
+name: 'Deploy'
+description: 'Deployment Action'
 inputs:
   environment:  # id of input
     description: 'environment to deploy'
